@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "726262096095",
+    "project_id": "gerador-validador",
+    "storage_bucket": "gerador-validador.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:726262096095:android:bfebc32a1a98d72ac4496a",
+        "android_client_info": {
+          "package_name": "com.efs.gerador_validador"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "726262096095-qcom90i12oul99ldci6hbegeo69p2bcf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyASxHMg3l2sHlr4D2yjmaQEtD87cv8hCX4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "726262096095-qcom90i12oul99ldci6hbegeo69p2bcf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
