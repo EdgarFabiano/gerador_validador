@@ -58,10 +58,10 @@ class _SettingsPageState extends State<SettingsPage> {
                   },
                 ),
                 Divider(),
-                ListTile(
-                  title: Text("Tela inicial"),
-                ),
-                Divider(),
+                // ListTile(
+                //   title: Text("Tela inicial"),
+                // ),
+                // Divider(),
                 SizedBox(
                   height: 500,
                   child: reorderableListView,
