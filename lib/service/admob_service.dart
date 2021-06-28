@@ -1,23 +1,15 @@
-import 'dart:io';
-
 import 'package:firebase_admob/firebase_admob.dart';
 import 'package:flutter/material.dart';
 import 'package:gerador_validador/defaults/defaults_export.dart';
 
 class AdMobService {
-  static final String testAppId = Platform.isAndroid
-      ? 'ca-app-pub-3940256099942544~3347511713'
-      : 'ca-app-pub-3940256099942544~1458002511';
+  static final String testAppId = 'ca-app-pub-3940256099942544~3347511713';
 
-  static final String bannerTestAdUnitId = Platform.isAndroid
-      ? 'ca-app-pub-3940256099942544/6300978111'
-      : 'ca-app-pub-3940256099942544/2934735716';
+  static final String bannerTestAdUnitId = 'ca-app-pub-5932227223136302/1970700133';
 
-  static final String interstitialTestAdUnitId = Platform.isAndroid
-      ? 'ca-app-pub-3940256099942544/1033173712'
-      : 'ca-app-pub-3940256099942544/4411468910';
+  static final String interstitialTestAdUnitId = 'ca-app-pub-3940256099942544/1033173712';
 
-  static final String appId = 'ca-app-pub-9921693044196842~2324549899';
+  static final String appId = 'ca-app-pub-5932227223136302~5091687492';
 
   static String getAppId() {
     if (!Constants.isTesting) {
@@ -27,7 +19,10 @@ class AdMobService {
   }
 
   static double bannerPadding(BuildContext context) {
-    var height = MediaQuery.of(context).size.height;
+    var height = MediaQuery
+        .of(context)
+        .size
+        .height;
     if (height <= 400) {
       return 32;
     } else if (height >= 720) {
@@ -37,11 +32,11 @@ class AdMobService {
   }
 
   /*banner*/
-  static final String bannerId = 'ca-app-pub-9921693044196842/5737181296';
+  static final String bannerId = 'ca-app-pub-5932227223136302/1970700133';
 
   static BannerAd _banner;
 
-  static String getBannerId() {
+  static String _getBannerId() {
     if (!Constants.isTesting) {
       return bannerId;
     }
@@ -51,8 +46,9 @@ class AdMobService {
   static BannerAd startBanner() {
     if (_banner == null) {
       _banner = BannerAd(
-        adUnitId: getBannerId(),
+        adUnitId: _getBannerId(),
         size: AdSize.smartBanner,
+        targetingInfo: MobileAdTargetingInfo(testDevices: ['4B0FDC40963AB3E77AED679FF240F802'])
       );
     }
     return _banner;
@@ -68,61 +64,30 @@ class AdMobService {
   }
 
   /*sorteio-interstitial*/
-  static final String sorteioInterstitialId = Platform.isAndroid
-      ? "ca-app-pub-9921693044196842/1209850177"
-      : "ca-app-pub-9921693044196842/3623071156";
+  static final String interstitialId = 'ca-app-pub-5932227223136302/8160418559';
 
-  static InterstitialAd _sorteioInterstitial;
+  static InterstitialAd _interstitial;
 
-  static InterstitialAd get sorteioInterstitial => _sorteioInterstitial;
+  static InterstitialAd get interstitial => _interstitial;
 
-  static String getSorteioInterstitialId() {
+  static String _getInterstitialId() {
     if (!Constants.isTesting) {
-      return sorteioInterstitialId;
+      return interstitialId;
     }
     return interstitialTestAdUnitId;
   }
 
-  static InterstitialAd buildSorteioInterstitial() {
+  static InterstitialAd buildInterstitial() {
     return InterstitialAd(
-        adUnitId: getSorteioInterstitialId(),
+        adUnitId: _getInterstitialId(),
+        targetingInfo: MobileAdTargetingInfo(testDevices: ['4B0FDC40963AB3E77AED679FF240F802']),
         listener: (MobileAdEvent event) {
           if (event == MobileAdEvent.loaded) {
-            _sorteioInterstitial?.show();
+            _interstitial?.show();
           }
           if (event == MobileAdEvent.clicked || event == MobileAdEvent.closed) {
-            _sorteioInterstitial.dispose();
+            _interstitial.dispose();
           }
         });
   }
-
-  /*resultado-interstitial*/
-  static final String resultadoInterstitialId = Platform.isAndroid
-      ? "ca-app-pub-9921693044196842/3747778987"
-      : "ca-app-pub-9921693044196842/7495452301";
-
-  static InterstitialAd _resultadoInterstitial;
-
-  static InterstitialAd get resultadoInterstitial => _resultadoInterstitial;
-
-  static String getResultadoInterstitialId() {
-    if (!Constants.isTesting) {
-      return resultadoInterstitialId;
-    }
-    return interstitialTestAdUnitId;
-  }
-
-  static InterstitialAd buildResultadoInterstitial() {
-    return InterstitialAd(
-        adUnitId: getResultadoInterstitialId(),
-        listener: (MobileAdEvent event) {
-          if (event == MobileAdEvent.loaded) {
-            _resultadoInterstitial?.show();
-          }
-          if (event == MobileAdEvent.clicked || event == MobileAdEvent.closed) {
-            _resultadoInterstitial.dispose();
-          }
-        });
-  }
-
 }

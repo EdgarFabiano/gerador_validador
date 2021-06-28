@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:gerador_validador/service/admob_service.dart';
 import 'package:gerador_validador/service/gerador_service.dart';
 
 class GeradorCPFPage extends StatefulWidget {
@@ -11,9 +12,11 @@ class _GeradorCPFPageState extends State<GeradorCPFPage>
     with AutomaticKeepAliveClientMixin {
   TextEditingController _controller;
   bool _useMask = true;
+  int _chance = 0;
 
   void initState() {
     super.initState();
+    AdMobService.buildInterstitial();
     _controller = TextEditingController();
     _controller.text = GeradorService.generateCpf();
     _checkMask();
@@ -31,6 +34,13 @@ class _GeradorCPFPageState extends State<GeradorCPFPage>
 
   void _generateNew() {
     setState(() {
+      _chance++;
+      if (_chance >= 3) {
+        AdMobService.buildInterstitial()
+          ..load()
+          ..show();
+        _chance = 0;
+      }
       _controller.text = GeradorService.generateCpf();
       _checkMask();
     });

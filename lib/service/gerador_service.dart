@@ -15,9 +15,9 @@ class GeradorService {
       length, (_) => _numbers.codeUnitAt(_rnd.nextInt(_numbers.length))));
 
   static String generateCpf() {
-    var strCPF = _getRandomNumber(9);
-    var resto1 = Util.modulo11(strCPF, 9, 11);
-    var resto2 = Util.modulo11(strCPF, 9, 12);
+    String strCPF = _getRandomNumber(9);
+    String resto1 = Util.modulo11(strCPF, 9, 11).toString();
+    String resto2 = Util.modulo11(strCPF + resto1, 10, 12).toString();
     strCPF = strCPF + resto1.toString() + resto2.toString();
 
     return strCPF;
