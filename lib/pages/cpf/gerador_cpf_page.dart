@@ -12,13 +12,13 @@ class _GeradorCPFPageState extends State<GeradorCPFPage>
     with AutomaticKeepAliveClientMixin {
   TextEditingController _controller;
   bool _useMask = true;
-  int _chance = 0;
+  int _chance = 2;
 
   void initState() {
     super.initState();
     AdMobService.buildInterstitial();
     _controller = TextEditingController();
-    _controller.text = GeradorService.generateCpf();
+    //_controller.text = GeradorService.generateCpf();
     _checkMask();
   }
 
@@ -69,7 +69,8 @@ class _GeradorCPFPageState extends State<GeradorCPFPage>
                           content: Text(
                             "Copiado '" + _controller.text + "'",
                           ),
-                        duration: Duration(seconds: 1),),
+                          duration: Duration(seconds: 1),
+                        ),
                       );
                     },
                     icon: Icon(Icons.content_copy),
@@ -97,10 +98,28 @@ class _GeradorCPFPageState extends State<GeradorCPFPage>
                         ],
                       ),
                     ),
-                    RaisedButton.icon(
-                      onPressed: _generateNew,
-                      icon: Icon(Icons.refresh),
-                      label: Text("Gerar novo"),
+                    Column(
+                      children: [
+                        RaisedButton.icon(
+                          onPressed: _generateNew,
+                          icon: Icon(Icons.refresh),
+                          label: Text("Gerar novo"),
+                        ),
+                        Visibility(
+                          visible: _chance == 2,
+                          child: Container(
+                              color: Colors.orange,
+                              alignment: Alignment.center,
+                              child: Padding(
+                                padding: const EdgeInsets.only(
+                                    left: 20.0,
+                                    right: 20.0,
+                                    top: 5.0,
+                                    bottom: 5.0),
+                                child: Text(("Anúncio")),
+                              )),
+                        ),
+                      ],
                     ),
                   ],
                 ),
