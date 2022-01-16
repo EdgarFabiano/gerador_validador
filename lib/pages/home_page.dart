@@ -12,7 +12,8 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin {
+class _HomePageState extends State<HomePage>
+    with SingleTickerProviderStateMixin {
   TabController _tabController;
 
   @override
@@ -47,11 +48,13 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
 
   @override
   Widget build(BuildContext context) {
-
     return DefaultTabController(
       length: 2,
       child: Padding(
-        padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom == 0 ? AdMobService.bannerPadding(context) : 0),
+        padding: EdgeInsets.only(
+            bottom: MediaQuery.of(context).viewInsets.bottom == 0
+                ? AdMobService.bannerPadding(context)
+                : 0),
         child: Scaffold(
           drawer: Drawer(
             child: AppDrawer(),
@@ -60,8 +63,14 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
             bottom: TabBar(
               controller: _tabController,
               tabs: [
-                Tab(icon: Icon(Icons.library_add), text: "Gerar",),
-                Tab(icon: Icon(Icons.check), text: "Validar",),
+                Tab(
+                  icon: Icon(Icons.library_add),
+                  text: "Gerar",
+                ),
+                Tab(
+                  icon: Icon(Icons.check),
+                  text: "Validar",
+                ),
               ],
             ),
             title: Text(Strings.appName),

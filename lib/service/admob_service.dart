@@ -18,6 +18,11 @@ class AdMobService {
     return testAppId;
   }
 
+  static List<String> testDevices() {
+    return ['4B0FDC40963AB3E77AED679FF240F802',
+      '118F4E581E0D5DAA4F78D3B1A29E861C'];
+  }
+
   static double bannerPadding(BuildContext context) {
     var height = MediaQuery
         .of(context)
@@ -48,7 +53,18 @@ class AdMobService {
       _banner = BannerAd(
         adUnitId: _getBannerId(),
         size: AdSize.smartBanner,
-        targetingInfo: MobileAdTargetingInfo(testDevices: ['4B0FDC40963AB3E77AED679FF240F802'])
+        targetingInfo: MobileAdTargetingInfo(testDevices: testDevices()),
+        listener: (MobileAdEvent event) {
+          if (event == MobileAdEvent.loaded) {
+            _banner?.show();
+          }
+          if (event == MobileAdEvent.clicked ||
+              event == MobileAdEvent.closed ||
+              event == MobileAdEvent.impression ||
+              event == MobileAdEvent.leftApplication) {
+            _banner?.load();
+          }
+        },
       );
     }
     return _banner;
@@ -78,16 +94,21 @@ class AdMobService {
   }
 
   static InterstitialAd buildInterstitial() {
-    return InterstitialAd(
+    _interstitial = InterstitialAd(
         adUnitId: _getInterstitialId(),
-        targetingInfo: MobileAdTargetingInfo(testDevices: ['4B0FDC40963AB3E77AED679FF240F802']),
+        targetingInfo: MobileAdTargetingInfo(testDevices: testDevices()),
         listener: (MobileAdEvent event) {
           if (event == MobileAdEvent.loaded) {
             _interstitial?.show();
           }
-          if (event == MobileAdEvent.clicked || event == MobileAdEvent.closed) {
-            _interstitial.dispose();
+          if (event == MobileAdEvent.clicked ||
+              event == MobileAdEvent.closed ||
+              event == MobileAdEvent.impression ||
+              event == MobileAdEvent.leftApplication) {
+            _interstitial?.dispose();
+            _interstitial = null;
           }
         });
+    return _interstitial;
   }
 }
