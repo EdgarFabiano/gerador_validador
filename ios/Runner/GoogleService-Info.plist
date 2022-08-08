@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>824811770110-btnf33n6rkusefql6uu392c3k3pjaamm.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.824811770110-btnf33n6rkusefql6uu392c3k3pjaamm</string>
+	<key>API_KEY</key>
+	<string>AIzaSyC2TGi1KX7NbSKn94A5b9QV9_O1Bcu_e8w</string>
+	<key>GCM_SENDER_ID</key>
+	<string>824811770110</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.palpitesDaLoteria</string>
+	<key>PROJECT_ID</key>
+	<string>gerador-validador-2</string>
+	<key>STORAGE_BUCKET</key>
+	<string>gerador-validador-2.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:824811770110:ios:83df7c9d360451484b15af</string>
+</dict>
+</plist>
