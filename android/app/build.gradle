@@ -32,7 +32,7 @@ if (keystorePropertiesFile.exists()) {
 }
 
 android {
-    ndkVersion "18.1.5063045"
+    ndkVersion "21.1.6352462"
     compileSdkVersion 33
 
     lintOptions {
@@ -44,6 +44,7 @@ android {
         applicationId "com.efs.gerador_validador"
         minSdkVersion 16
         targetSdkVersion 33
+        multiDexEnabled true
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
