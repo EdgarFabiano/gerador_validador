@@ -1,34 +1,41 @@
 {
   "project_info": {
-    "project_number": "726262096095",
-    "project_id": "gerador-validador",
-    "storage_bucket": "gerador-validador.appspot.com"
+    "project_number": "824811770110",
+    "project_id": "gerador-validador-2",
+    "storage_bucket": "gerador-validador-2.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:726262096095:android:bfebc32a1a98d72ac4496a",
+        "mobilesdk_app_id": "1:824811770110:android:76f383a77bf5b8a24b15af",
         "android_client_info": {
           "package_name": "com.efs.gerador_validador"
         }
       },
       "oauth_client": [
         {
-          "client_id": "726262096095-qcom90i12oul99ldci6hbegeo69p2bcf.apps.googleusercontent.com",
+          "client_id": "824811770110-i1sove0dmtrme7887i046645mdnn4ugf.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyASxHMg3l2sHlr4D2yjmaQEtD87cv8hCX4"
+          "current_key": "AIzaSyC1U82rmsIqBepee8WmWmucg5inZ705pRs"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "726262096095-qcom90i12oul99ldci6hbegeo69p2bcf.apps.googleusercontent.com",
+              "client_id": "824811770110-i1sove0dmtrme7887i046645mdnn4ugf.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "824811770110-btnf33n6rkusefql6uu392c3k3pjaamm.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.palpitesDaLoteria"
+              }
             }
           ]
         }
