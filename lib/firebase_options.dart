@@ -26,7 +26,10 @@ class DefaultFirebaseOptions {
       case TargetPlatform.android:
         return android;
       case TargetPlatform.iOS:
-        return ios;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for ios - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.macOS:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for macos - '
@@ -55,15 +58,5 @@ class DefaultFirebaseOptions {
     messagingSenderId: '824811770110',
     projectId: 'gerador-validador-2',
     storageBucket: 'gerador-validador-2.appspot.com',
-  );
-
-  static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyC2TGi1KX7NbSKn94A5b9QV9_O1Bcu_e8w',
-    appId: '1:824811770110:ios:83df7c9d360451484b15af',
-    messagingSenderId: '824811770110',
-    projectId: 'gerador-validador-2',
-    storageBucket: 'gerador-validador-2.appspot.com',
-    iosClientId: '824811770110-btnf33n6rkusefql6uu392c3k3pjaamm.apps.googleusercontent.com',
-    iosBundleId: 'com.example.palpitesDaLoteria',
   );
 }

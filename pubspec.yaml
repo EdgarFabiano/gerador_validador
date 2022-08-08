@@ -29,10 +29,11 @@ dependencies:
   device_info: ^2.0.3
   easy_dynamic_theme: ^2.2.0
   firebase_admob: ^0.11.2
-  firebase_analytics: ^7.0.1
-  firebase_core: ^0.7.0
+  firebase_analytics: ^9.1.4
+  firebase_core: ^1.20.0
+  firebase_crashlytics: ^2.8.6
   fluttertoast: ^8.0.9
-  in_app_review: ^1.0.4
+  in_app_review: 2.0.4
   intl: ^0.17.0
   mask_text_input_formatter: ^2.4.0
   share: ^2.0.4
