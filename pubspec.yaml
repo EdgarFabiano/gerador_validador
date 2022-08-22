@@ -24,7 +24,6 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.5
-  data_connection_checker: ^0.3.4
   date_format: ^2.0.6
   device_info: ^2.0.3
   easy_dynamic_theme: ^2.2.0
